@@ -1,4 +1,6 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace API.Models
 {
@@ -8,7 +10,11 @@ namespace API.Models
         public PerfilMoba() => CriadoEm = DateTime.Now;
 
         //Atributos ou propriedades
+        
+        [Key]
         public int Id { get; set; }
+        public Usuario usuario { get; set; } 
+        public Jogo jogo { get; set; } 
         public string eloLOL { get; set; }
         public string champ { get; set; }
         public string laneMain { get; set; }
@@ -16,7 +22,7 @@ namespace API.Models
         public DateTime CriadoEm { get; set; }
 
         public override string ToString() =>
-            $"Id: {Id} | Criado em: {CriadoEm}";
+            $"Id: {Id} | eloLOL: {eloLOL} | champ: {champ} | LaneMain: {laneMain} | LaneSecundaria: {laneSecundaria} | Criado em: {CriadoEm}";
 
     }
 }

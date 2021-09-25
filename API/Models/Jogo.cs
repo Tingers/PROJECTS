@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace API.Models
 {
@@ -8,6 +9,7 @@ namespace API.Models
         public Jogo() => CriadoEm = DateTime.Now;
 
         //Atributos ou propriedades
+        // [Key]
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Genero { get; set; }

@@ -53,12 +53,12 @@ namespace API.Controllers
         // DELETE: api/usuario/deletar
         [HttpDelete]
         [Route("deletar/{Id}")]
-        public async Task<IActionResult> DeleteAsync([FromRoute] string name)
+        public async Task<IActionResult> DeleteAsync([FromRoute] int Id)
         {
             
             Usuario usuario = _context.usuarios.FirstOrDefault
             (
-                usuario => usuario.Nickname == name
+                usuario => usuario.Id == Id
             );
             _context.usuarios.Remove(usuario);
             await _context.SaveChangesAsync();
@@ -70,10 +70,10 @@ namespace API.Controllers
         [Route("editar/{Id}")]
         public async Task<IActionResult> UpdateAsync([FromBody] Usuario usuario)
         {
-            _context.usuarios.Update(usuario);
-            await _context.SaveChangesAsync();
-            return Ok();
+               _context.usuarios.Update(usuario);
+               await _context.SaveChangesAsync();
+               return Ok();
+            
         }
-
     }
 }

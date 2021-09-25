@@ -38,7 +38,7 @@ namespace API.Controllers
 
        // GET: api/jogo/listarId/
         [HttpGet]
-        [Route("listarId/{id}")]
+        [Route("listarId/{Id}")]
         public async Task<IActionResult> GetByIdAsync([FromRoute] int id)
         {
             Jogo jogo = await _context.jogos.FindAsync(id);
@@ -52,13 +52,13 @@ namespace API.Controllers
         
         // DELETE: api/jogo/deletar
         [HttpDelete]
-        [Route("deletar/{id}")]
-        public async Task<IActionResult> DeleteAsync([FromRoute] string name)
+        [Route("deletar/{Id}")]
+        public async Task<IActionResult> DeleteAsync([FromRoute] int id)
         {
             
             Jogo jogo = _context.jogos.FirstOrDefault
             (
-                jogo => jogo.Nome == name
+                jogo => jogo.Id == id
             );
             _context.jogos.Remove(jogo);
             await _context.SaveChangesAsync();
@@ -67,9 +67,10 @@ namespace API.Controllers
 
          // PUT: api/jogo/editar
         [HttpPut]
-        [Route("editar/{id}")]
+        [Route("editar/{Id}")]
         public async Task<IActionResult> UpdateAsync([FromBody] Jogo jogo)
         {
+
             _context.jogos.Update(jogo);
             await _context.SaveChangesAsync();
             return Ok();

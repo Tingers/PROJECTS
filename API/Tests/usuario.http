@@ -3,7 +3,7 @@ POST https://localhost:5001/api/usuario/criar
 Content-Type: application/json
 
 {
-    "Nick" : "Bolacha",
+    "Nickname" : "Bolacha",
     "Idade" : 20,
     "Pais" : "Brazil"
 }
@@ -18,11 +18,12 @@ GET https://localhost:5001/api/usuario/listarId/1
 DELETE https://localhost:5001/api/usuario/deletar/1
 
 ###
-PUT https://localhost:5001/api/usuario/editar
+PUT https://localhost:5001/api/usuario/editar/1
 Content-Type: application/json
 
 {
-    "Nick" : "xXx-Bolacha-xXx",
-    "Idade" : 20,
-    "Pais" : "Brazil"
+    "Id"     : 2,
+    "nickname" : "xXx-Bolacha-xXx",
+    "idade" : 20,
+    "pais" : "Portugal"
 }

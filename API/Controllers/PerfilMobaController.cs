@@ -37,6 +37,18 @@ namespace API.Controllers
         [Route("listar")]
         public async Task<IActionResult> ListAsync() => Ok(await _context.perfils.ToListAsync());
 
+        // GET: api/perfilMoba/listarId/
+        [HttpGet]
+        [Route("listarId/{Id}")]
+        public async Task<IActionResult> GetByIdAsync([FromRoute] int id)
+        {
+            PerfilMoba perfilMoba = await _context.perfils.FindAsync(id);
+            if (perfilMoba != null)
+            {
+                return Ok(perfilMoba);
+            }
+            return NotFound();
+        }
 
     }
 }
