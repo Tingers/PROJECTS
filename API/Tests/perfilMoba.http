@@ -1,0 +1,31 @@
+###
+POST https://localhost:5001/api/perfilMoba/criar
+Content-Type: application/json
+
+{
+    "eloLol" : "madeira 2",
+    "Champ" : "malphite irlandes",
+    "laneMain" : "Top",
+    "laneSecundaria" : "Sup"
+
+}
+
+###
+GET https://localhost:5001/api/perfilMoba/listar
+
+###
+GET https://localhost:5001/api/perfilMoba/listarId/1
+
+###
+DELETE https://localhost:5001/api/perfilMoba/deletar/1
+
+###
+PUT https://localhost:5001/api/perfilMoba/editar
+Content-Type: application/json
+
+{
+    "eloLol" : "madeira 2",
+    "Champ" : "malphite zap",
+    "laneMain" : "Top",
+    "laneSecundaria" : "Sup"
+}

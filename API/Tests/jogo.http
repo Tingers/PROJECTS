@@ -1,0 +1,28 @@
+###
+POST https://localhost:5001/api/jogo/criar
+Content-Type: application/json
+
+{
+    "Nome" : "COD",
+    "Genero" : "FPS",
+    "Plataforma" : "PC"
+}
+
+###
+GET https://localhost:5001/api/jogo/listar
+
+###
+GET https://localhost:5001/api/jogo/listarId/1
+
+###
+DELETE https://localhost:5001/api/jogo/deletar/1
+
+###
+PUT https://localhost:5001/api/jogo/update
+Content-Type: application/json
+
+{
+    "Nome" : "COD",
+    "Genero" : "FPS",
+    "Plataforma" : "MOBILE"
+}
