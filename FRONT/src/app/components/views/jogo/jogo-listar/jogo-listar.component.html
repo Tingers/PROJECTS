@@ -1,1 +1,9 @@
-<p>jogo-listar works!</p>
+<a routerLink="/jogo/cadastrar">Novo Jogo</a>
+
+<ol>
+    <li *ngFor="let jogo of jogos">
+        {{ jogo.nome }}
+        <a routerLink="/jogo/cadastrar/{{ jogo.id }}">Editar</a>
+        <a [routerLink]="['/jogo/cadastrar/', jogo.id]">Editar</a>
+    </li>
+</ol>

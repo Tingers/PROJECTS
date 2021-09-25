@@ -1,1 +1,14 @@
-<p>usuario-cadastrar works!</p>
+<div>
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" [(ngModel)]="nome" />
+</div>
+<div>
+    <label for="idaide">Idade:</label>
+    <input type="number" name="idade" [(ngModel)]="idade" />
+</div>
+<div>
+    <label for="pais">País:</label>
+    <input type="text" name="pai" [(ngModel)]="pais" />
+</div>
+<button (click)="cadastrar()">Cadastrar</button>
+<button *ngIf="id" (click)="editar()">Salvar</button>

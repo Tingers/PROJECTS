@@ -1,1 +1,9 @@
-<p>usuario-listar works!</p>
+<a routerLink="/usuario/cadastrar">Novo Usuario</a>
+
+<ol>
+    <li *ngFor="let usuario of usuarios">
+        {{ usuario.nome }}
+        <a routerLink="/usuario/cadastrar/{{ usuario.id }}">Editar</a>
+        <a [routerLink]="['/usuario/cadastrar/', usuario.id]">Editar</a>
+    </li>
+</ol>

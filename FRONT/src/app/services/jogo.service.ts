@@ -16,20 +16,20 @@ export class JogoService{
         return this.http.get<Jogo[]>(`${this.baseURL}/list`);
     }
 
-    getById(id: number): Observable<Jogo>{
-        return this.http.get<Jogo>(`${this.baseURL}/getbyid/${id}`);
+    getById(idjogo: number): Observable<Jogo>{
+        return this.http.get<Jogo>(`${this.baseURL}/getbyid/${idjogo}`);
     }
 
     create(jogo: Jogo): Observable<Jogo>{
         return this.http.post<Jogo>(`${this.baseURL}/create`, jogo);
     }
 
-    updateById(id: number, jogo: Jogo): Observable<Jogo>{
-        return this.http.put<Jogo>(`${this.baseURL}/updatebyid/${id}`, jogo);
+    updateById(idjogo: number, jogo: Jogo): Observable<Jogo>{
+        return this.http.put<Jogo>(`${this.baseURL}/updatebyid/${idjogo}`, jogo);
     }
 
-    deleteById(id: number): Observable<Jogo>{
-        return this.http.delete<Jogo>(`${this.baseURL}/deletebyid/${id}`);
+    deleteById(idjogo: number): Observable<Jogo>{
+        return this.http.delete<Jogo>(`${this.baseURL}/deletebyid/${idjogo}`);
     }
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Jogo } from 'src/app/models/jogo';
+import { JogoService } from 'src/app/services/jogo.service';
 
 @Component({
   selector: 'app-jogo-listar',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./jogo-listar.component.css']
 })
 export class JogoListarComponent implements OnInit {
+  jogos: Jogo[] = [];
 
-  constructor() { }
+  constructor(private service: JogoService) { }
 
   ngOnInit(): void {
+    this.service.list().subscribe((jogos)=>{
+      this.jogos = jogos;
+    });
   }
 
 }

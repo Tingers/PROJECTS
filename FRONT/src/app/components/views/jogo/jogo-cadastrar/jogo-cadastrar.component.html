@@ -1,1 +1,14 @@
-<p>jogo-cadastrar works!</p>
+<div>
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" [(ngModel)]="nome" />
+</div>
+<div>
+    <label for="genero">Gênero:</label>
+    <input type="text" name="genero" [(ngModel)]="genero" />
+</div>
+<div>
+    <label for="plataforma">Plataforma:</label>
+    <input type="text" name="plataforma" [(ngModel)]="plataforma" />
+</div>
+<button (click)="cadastrar()">Cadastrar</button>
+<button *ngIf="id" (click)="editar()">Salvar</button>
