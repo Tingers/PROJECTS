@@ -1,1 +1,58 @@
-<p>jogo-editar works!</p>
+<!-- <h2>Cadastrar jogo</h2>
+    <div>
+        <label for="idJogo">Id:</label>
+        <input type="text" name="idJogo" [(ngModel)]="idJogo" />
+    </div>
+    <div>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" [(ngModel)]="nome" />
+    </div>
+    <div>
+        <label for="genero">Gênero:</label>
+        <input type="text" name="genero" [(ngModel)]="genero" />
+    </div>
+    <div>
+        <label for="plataforma">Plataforma:</label>
+        <input type="text" name="plataforma" [(ngModel)]="plataforma" />
+    </div>
+<br> -->
+
+
+<mat-card>
+    <mat-card-title> Editar jogo </mat-card-title>
+    <mat-card-content>
+  
+      <div class="jogo">
+        
+        <mat-card>
+            <mat-card-title> Modificar Jogo </mat-card-title>
+            <mat-card-content>
+              <div class="conteudo-jogo">
+                <mat-form-field>
+                  <mat-label for="nome">Id do jogo</mat-label>
+                  <input matInput placeholder="" type="text" name="nome" [(ngModel)]="idJogo" />
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label for="nome">Nome do jogo</mat-label>
+                  <input matInput placeholder="" type="text" name="nome" [(ngModel)]="nome" />
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label for="genero">Genero do jogo</mat-label>
+                  <input matInput placeholder="" type="text" name="genero" [(ngModel)]="genero" />
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label for="plataforma">Plataforma do jogo</mat-label>
+                  <input matInput placeholder="" type="text" name="plataforma" [(ngModel)]="plataforma" />
+                </mat-form-field>
+              </div>
+            </mat-card-content>
+        </mat-card>
+  
+      </div>
+  
+        <mat-card-actions>
+            <button mat-raised-button color="warn" (click)="editar()">Editar</button>
+        </mat-card-actions>
+        
+    </mat-card-content>
+</mat-card>

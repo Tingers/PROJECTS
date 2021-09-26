@@ -53,12 +53,12 @@ namespace API.Controllers
         // DELETE: api/jogo/deletar
         [HttpDelete]
         [Route("deletar/{Id}")]
-        public async Task<IActionResult> DeleteAsync([FromRoute] int id)
+        public async Task<IActionResult> DeleteAsync([FromRoute] int Id)
         {
             
             Jogo jogo = _context.jogos.FirstOrDefault
             (
-                jogo => jogo.Id == id
+                jogo => jogo.Id == Id
             );
             _context.jogos.Remove(jogo);
             await _context.SaveChangesAsync();

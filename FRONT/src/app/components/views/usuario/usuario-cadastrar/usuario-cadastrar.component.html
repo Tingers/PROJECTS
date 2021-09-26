@@ -1,14 +1,35 @@
-<div>
-    <label for="nome">Nome:</label>
-    <input type="text" name="nome" [(ngModel)]="nome" />
-</div>
-<div>
-    <label for="idaide">Idade:</label>
-    <input type="number" name="idade" [(ngModel)]="idade" />
-</div>
-<div>
-    <label for="pais">País:</label>
-    <input type="text" name="pai" [(ngModel)]="pais" />
-</div>
-<button (click)="cadastrar()">Cadastrar</button>
-<button *ngIf="id" (click)="editar()">Salvar</button>
+<mat-card>
+    <mat-card-title> Cadastrar usuario </mat-card-title>
+    <mat-card-content>
+  
+      <div class="usuario">
+        
+        <mat-card>
+            <mat-card-title> Adicionar usuario </mat-card-title>
+            <mat-card-content>
+              <div class="conteudo-usuario">
+                <mat-form-field>
+                  <mat-label for="nome">Nome do usuario</mat-label>
+                  <input matInput placeholder="Nome Usuario" type="text" name="nome" [(ngModel)]="nome" />
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label for="idade">Idade do Usuareio</mat-label>
+                  <input matInput placeholder="Idade" type="text" name="idade" [(ngModel)]="idade" />
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label for="pais">País do Usuario</mat-label>
+                  <input matInput placeholder="País" type="text" name="pais" [(ngModel)]="pais" />
+                </mat-form-field>
+              </div>
+            </mat-card-content>
+        </mat-card>
+  
+      </div>
+  
+        <mat-card-actions>
+            <button mat-raised-button color="warn" (click)="cadastrar()">Cadastrar</button>
+            <!-- <a mat-stroked-button routerLink="../../listar/aluguel"> Listar ALuguel </a> -->
+        </mat-card-actions>
+        
+    </mat-card-content>
+</mat-card>

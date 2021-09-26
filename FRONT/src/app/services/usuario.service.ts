@@ -12,23 +12,23 @@ export class UsuarioService{
     constructor(private http: HttpClient){}
 
     list(): Observable<Usuario[]>{
-        return this.http.get<Usuario[]>(`${this.baseURL}/list`);
+        return this.http.get<Usuario[]>(`${this.baseURL}/listar`);  
     }
 
-    getById(idusuario: number): Observable<Usuario>{
-        return this.http.get<Usuario>(`${this.baseURL}/getbyid/${idusuario}`);
+    getById(Id: number): Observable<Usuario>{
+        return this.http.get<Usuario>(`${this.baseURL}/listarId/${Id}`);
     }
 
     create(usuario: Usuario): Observable<Usuario>{
-        return this.http.post<Usuario>(`${this.baseURL}/create`, usuario);
+        return this.http.post<Usuario>(`${this.baseURL}/criar`, usuario);
     }
 
-    updateById(idusuario: number, usuario: Usuario): Observable<Usuario>{
-        return this.http.put<Usuario>(`${this.baseURL}/updatebyid/${idusuario}`, usuario);
+    updateById(Id: number, usuario: Usuario): Observable<Usuario>{
+        return this.http.put<Usuario>(`${this.baseURL}/updatebyid/${Id}`, usuario);
     }
 
-    deleteById(idusuario: number): Observable<Usuario>{
-        return this.http.delete<Usuario>(`${this.baseURL}/deletebyid/${idusuario}`);
+    deleteById(Id: number): Observable<Usuario>{
+        return this.http.delete<Usuario>(`${this.baseURL}/deletar`);
     }
 
 }

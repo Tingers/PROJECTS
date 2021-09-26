@@ -1,0 +1,38 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened fixedInViewport="true" fixedTopGap="64">
+      <mat-nav-list>
+        <a mat-list-item routerLink="">
+          <mat-icon class="material-icons-outlined" mat-list-icon>home</mat-icon>
+          <span> Home</span>
+        </a>
+        <a mat-list-item routerLink="perfilMoba/cadastrar">
+          <mat-icon class="material-icons-outlined" mat-list-icon>person_add</mat-icon>
+          <span> Cadastrar Perfil</span>
+        </a>
+        <a mat-list-item routerLink="perfilMoba/listar">
+            <mat-icon class="material-icons-outlined" mat-list-icon>person</mat-icon>
+            <span> Ver Perfils</span>
+        </a>
+        <a mat-list-item routerLink="usuario/cadastrar">
+            <mat-icon class="material-icons-outlined" mat-list-icon>account_circle</mat-icon>
+            <span> Cadastrar Usuario</span>
+        </a>
+        <a mat-list-item routerLink="usuario/listar">
+            <mat-icon class="material-icons-outlined" mat-list-icon>manage_accounts</mat-icon>
+            <span> Listar Usuario</span>
+        </a>
+        <a mat-list-item routerLink="jogo/cadastrar">
+            <mat-icon class="material-icons-outlined" mat-list-icon>sports_esports</mat-icon>
+            <span> Cadastrar Jogo</span>
+        </a> 
+        <a mat-list-item routerLink="jogo/listar">
+            <mat-icon class="material-icons-outlined" mat-list-icon>games</mat-icon>
+            <span> Listar Jogo</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

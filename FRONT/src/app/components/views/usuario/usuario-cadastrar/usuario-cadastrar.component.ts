@@ -4,12 +4,11 @@ import { UsuarioService } from "src/app/services/usuario.service";
 import { Usuario} from "src/app/models/usuario";
 
 @Component({
-  selector: 'app-usuario',
-  templateUrl: './usuario.component.html',
-  styleUrls: ['./usuario.component.css']
+  selector: 'app-usuario-cadastrar',
+  templateUrl: './usuario-cadastrar.component.html',
+  styleUrls: ['./usuario-cadastrar.component.css']
 })
-export class JogoComponent implements OnInit {
-  idusuario!: number;
+export class UsuarioCadastrarComponent implements OnInit {
   nome!: string;
   idade!: number;
   pais!: string;
@@ -20,18 +19,7 @@ export class JogoComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-  ngOnInit(): void {
-    this.route.params.subscribe((params)=>{
-      this.idusuario= params.idusuario;
-      if(this.idusuario!= undefined){
-        this.service.getById(this.idusuario).subscribe((usuario)=>{
-          this.nome = usuario.nome;
-          this.idade = usuario.idade;
-          this.pais = usuario.pais;
-        });
-      }
-    });
-  }
+  ngOnInit(): void {}
 
   cadastrar(): void{
     let usuario: Usuario={
@@ -47,7 +35,6 @@ export class JogoComponent implements OnInit {
 
     editar(): void{
       let usuario: Usuario= {
-        idusuario: this.idusuario,
         nome: this.nome,
         idade: this.idade,
         pais: this.pais,

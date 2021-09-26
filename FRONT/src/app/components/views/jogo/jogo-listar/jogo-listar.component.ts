@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Jogo } from 'src/app/models/Jogo';
 import { JogoService } from 'src/app/services/jogo.service';
+import { Jogo } from 'src/app/models/jogo';
+import { MatTableDataSource } from '@angular/material/table';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-jogo-listar',
@@ -8,14 +10,28 @@ import { JogoService } from 'src/app/services/jogo.service';
   styleUrls: ['./jogo-listar.component.css']
 })
 export class JogoListarComponent implements OnInit {
+
+  colunasJogos: string[] = ['id', 'nome', 'genero', 'plataforma', 'editar', 'deletar'];
+  jogosTable = new MatTableDataSource<Jogo>();
   jogos: Jogo[] = [];
 
-  constructor(private service: JogoService) { }
+  id!: number;
+  jogo!: Jogo;
+
+  constructor(private service: JogoService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.service.list().subscribe((jogos)=>{
+    this.service.list().subscribe((jogos) => {
       this.jogos = jogos;
+      console.log(jogos)
     });
+  }
+
+  deletarJogo(): void{
+    console.log(this.id);
+    this.service.deleteById(this.id).subscribe((jogo) =>{
+      this.jogo = jogo;
+    })
   }
 
 }

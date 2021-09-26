@@ -13,23 +13,23 @@ export class JogoService{
     constructor(private http: HttpClient){}
 
     list(): Observable<Jogo[]>{
-        return this.http.get<Jogo[]>(`${this.baseURL}/list`);
+        return this.http.get<Jogo[]>(`${this.baseURL}/listar`);
     }
 
-    getById(idjogo: number): Observable<Jogo>{
-        return this.http.get<Jogo>(`${this.baseURL}/getbyid/${idjogo}`);
+    getById(Id: number): Observable<Jogo>{
+        return this.http.get<Jogo>(`${this.baseURL}/listarId/${Id}`);
     }
 
     create(jogo: Jogo): Observable<Jogo>{
-        return this.http.post<Jogo>(`${this.baseURL}/create`, jogo);
+        return this.http.post<Jogo>(`${this.baseURL}/criar`, jogo);
     }
 
-    updateById(idjogo: number, jogo: Jogo): Observable<Jogo>{
-        return this.http.put<Jogo>(`${this.baseURL}/updatebyid/${idjogo}`, jogo);
+    updateById(Id: number, jogo: Jogo): Observable<Jogo>{
+        return this.http.put<Jogo>(`${this.baseURL}/editar/${Id}`, jogo);
     }
 
-    deleteById(idjogo: number): Observable<Jogo>{
-        return this.http.delete<Jogo>(`${this.baseURL}/deletebyid/${idjogo}`);
+    deleteById(Id: number): Observable<Jogo>{
+        return this.http.delete<Jogo>(`${this.baseURL}/deletar/${Id}`);
     }
 
 }
