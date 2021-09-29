@@ -2,22 +2,20 @@
     <mat-card-title> Cadastre seu perfil no jogo </mat-card-title>
     <mat-card-content>
   
-      <div class="jogo">
+      <div class="perfilMoba">
         
         <mat-card> 
             
              <mat-card-title> Adicionar perfil </mat-card-title>
             <mat-card-content>
               <div class="conteudo-perfilMoba">
-
-                <!-- <mat-form-field class="full-width" appearance="fill">
+                
+                <mat-form-field class="full-width" appearance="fill">
                     <mat-label>Jogo</mat-label>
-                    <select class="form-control">
-                    <option *ngFor="let jogo of jogos" value= {{jogo.id}}>
-                        {{jogo.nome}}
-                        </option>
+                    <select matNativeControl class="form-control" [(ngModel)]="idJogo">
+                        <option *ngFor="let jogo of jogos" [ngValue]="jogo.id">{{jogo.nome}}  </option>
                     </select>
-                </mat-form-field> -->
+                </mat-form-field>
  
                 <mat-form-field>
                   <mat-label for="eloLOL">Elo no LOL</mat-label>
@@ -25,15 +23,15 @@
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label for="champ">Campeão favorito</mat-label>
-                  <input matInput placeholder="Ex: Aatrox" type="text" name="champ" [(ngModel)]="champ" />
-                </mat-form-field>
+                  <input matInput placeholder="Ex: Aatrox" type="text" name="champ" [(ngModel)]="Champ" />
+                </mat-form-field> 
                 <mat-form-field>
                   <mat-label for="laneMain">Lane principal</mat-label>
-                  <input matInput placeholder="Ex: Mid" type="text" name="laneMain" [(ngModel)]="laneMain" />
+                  <input matInput placeholder="Ex: Mid" type="text" name="laneMain" [(ngModel)]="LaneMain" />
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label for="laneSecundaria">Lane Secundaria</mat-label>
-                  <input matInput placeholder="Ex: Top" type="text" name="laneSecundaria" [(ngModel)]="laneSecundaria" />
+                  <input matInput placeholder="Ex: Top" type="text" name="laneSecundaria" [(ngModel)]="LaneSecundaria" />
                 </mat-form-field> 
                </div>
             </mat-card-content>
@@ -42,7 +40,7 @@
       </div>
   
         <mat-card-actions> 
-             <!-- <button mat-raised-button color="warn" (click)="cadastrar()">Cadastrar</button> -->
+             <button mat-raised-button color="warn" (click)="cadastrar()">Cadastrar</button>
              <a mat-stroked-button routerLink="perfilMoba/listar"> Exibir perfil </a>
      </mat-card-actions>
         

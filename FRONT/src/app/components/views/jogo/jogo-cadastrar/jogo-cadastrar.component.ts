@@ -47,12 +47,5 @@ export class JogoCadastrarComponent implements OnInit {
       });
     }
 
-    // editar(): void{
-    //   let jogo: Jogo = {
-    //     id: this.Id,
-    //     nome: this.nome,
-    //     genero: this.genero,
-    //     plataforma: this.plataforma,
-    //   }
-    // }
+    
 }

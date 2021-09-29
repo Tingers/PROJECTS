@@ -24,8 +24,8 @@ namespace API.Controllers
 
         // POST: api/perfilMoba/criar
         [HttpPost]
-        [Route("criar/{Id}")]
-        public PerfilMoba create(PerfilMoba perfilMoba, [FromRoute] int id)
+        [Route("criar")]
+        public PerfilMoba create(PerfilMoba perfilMoba)
         {
             _context.perfils.Add(perfilMoba);
             _context.SaveChanges();

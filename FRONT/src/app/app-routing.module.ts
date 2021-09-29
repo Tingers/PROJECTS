@@ -55,7 +55,7 @@ const routes: Routes = [
       component: JogoDeletarComponent,
     },
 
-     //JOGO
+     //PERFIL
     {
       path: "perfilMoba/listar",
       component: PerfilMobaListarComponent,

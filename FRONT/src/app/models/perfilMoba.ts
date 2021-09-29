@@ -1,11 +1,12 @@
-export interface PerfilMoba {
+import { Jogo } from "./jogo";
 
+export interface PerfilMoba {
     Id?: number;
-    idJogador: number;
-    idJogo: number;
+    // idJogador: Usuario;
+    jogo: Jogo;
     eloLOL: string;
-    ChampFav: string;
+    Champ: string;
     LaneMain: string;
-    LaneSec: string;
+    laneSecundaria: string;
     criadoem?: string;
 }
