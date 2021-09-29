@@ -13,6 +13,7 @@ export class UsuarioCadastrarComponent implements OnInit {
   nome!: string;
   idade!: number;
   pais!: string;
+  GoldData:any;
 
   constructor(
     private service: UsuarioService,
@@ -24,14 +25,18 @@ export class UsuarioCadastrarComponent implements OnInit {
 
   cadastrar(): void{
     let usuario: Usuario={
-        Id: this.Id,
         nome: this.nome,
         idade: this.idade,
         pais: this.pais
     };
     this.service.create(usuario).subscribe((usuario)=>{
-      console.log(usuario);
-      this.router.navigate(["perfilMoba/cadastrar/" + this.Id +""]);
+      console.log(usuario)
+
+      
+        this.GoldData=usuario.Id
+        console.log(this.GoldData)
+      
+      this.router.navigate(["usuario/listar"]);
     });
   }
 

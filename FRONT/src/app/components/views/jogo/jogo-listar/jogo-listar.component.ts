@@ -23,7 +23,6 @@ export class JogoListarComponent implements OnInit {
   ngOnInit(): void {
     this.service.list().subscribe((jogos) => {
       this.jogos = jogos;
-      console.log(jogos)
     });
   }
 

@@ -4,6 +4,7 @@ import { PerfilMobaService } from "src/app/services/perfil-moba.service";
 import { PerfilMoba} from "src/app/models/perfilMoba";
 import { Jogo } from 'src/app/models/jogo';
 import { JogoService } from 'src/app/services/jogo.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-perfil-moba-cadastrar',
@@ -11,39 +12,6 @@ import { JogoService } from 'src/app/services/jogo.service';
   styleUrls: ['./perfil-moba-cadastrar.component.css']
 })
 export class PerfilMobaCadastrarComponent implements OnInit {
-//   // idJogador!: number;
-//   // idJogo!: number;
-//   // Id!: number;
-//   nomeJogo!: string;
-//   eloLOL!: string;
-//   champ!: string;
-//   laneMain!: string;
-//   LaneSec!: string;
-
-//   jogos: Jogo[] = [];
-//   perfil!: PerfilMoba;
-
-// constructor(
-//     private service: PerfilMobaService,
-//     private jogoService: JogoService,
-//     private router: Router,
-//     private route: ActivatedRoute
-//   ) { }
-
-//   ngOnInit(): void {
-//     this.jogoService.list().subscribe((jogos) => {
-//       this.jogos = jogos;
-//       console.log(jogos)
-//     });
-//   }
-
-//   cadastrar(): void{
-      
-
-    
-//     this.service.create(this.perfil).subscribe((perfil)=>{
-//       console.log(perfil);
-//     });
 
   Id!: number;
   eloLOL!: string;
@@ -51,14 +19,8 @@ export class PerfilMobaCadastrarComponent implements OnInit {
   LaneMain!: string;
   LaneSecundaria!: string;
   idJogo!: number; 
-  nomeJogo!: string;
   jogos: Jogo[] = [];
-
-  jogo!: Jogo;
-  plataforma: string | undefined;
-  genero: string | undefined;
-  nome: string | undefined;
-  perfilmoba = [];
+  IdUsuario!: number;
 
     constructor(
       private service: PerfilMobaService,
@@ -67,56 +29,32 @@ export class PerfilMobaCadastrarComponent implements OnInit {
       private route: ActivatedRoute
     ) { }
 
-    ngOnInit(): void {
+    private routeSub: Subscription = new Subscription();
 
+    ngOnInit(): void {
+      this.route.params.subscribe((params)=>{
+          this.IdUsuario = params.id;
+      });
       this.jogoService.list().subscribe((jogos: Jogo[]) => {
         this.jogos = jogos;
-        console.log(jogos)
-      });
-      this.route.params.subscribe((params)=>{
-        this.Id = params.id;
-        if(this.Id != undefined){
-          this.service.getById(this.Id).subscribe((PerfilMoba)=>{
-            this.eloLOL = PerfilMoba.eloLOL;
-            this.Champ = PerfilMoba.Champ;
-            this.LaneMain = PerfilMoba.LaneMain;
-            this.LaneSecundaria = PerfilMoba.laneSecundaria;
-          });
-        }
       });
     }
 
     cadastrar(): void{
 
-      this.jogoService.getById(this.idJogo).subscribe((jogo)=>{
-        this.jogo = jogo;
-        console.log(this.jogo);
-        // this.jogoTeste = this.jogo;
-      });
-
     
       let perfilmoba: PerfilMoba ={
-          jogo: this.jogo,
+          // idUsuario: this.IdUsuario,
+          idJogo: this.idJogo,
           eloLOL: this.eloLOL,
           Champ: this.Champ,
           LaneMain: this.LaneMain,
           laneSecundaria: this.LaneSecundaria
       };
 
-      //  this.jogoService.getById(this.idJogo).subscribe((jogo)=>{
-      //     let perfilmoba: PerfilMoba ={
-      //       jogo: jogo,
-      //       eloLOL: this.eloLOL,
-      //       Champ: this.Champ,
-      //       LaneMain: this.LaneMain,
-      //       laneSecundaria: this.LaneSecundaria
-      //     };
-          
-      // });
-
       this.service.create(perfilmoba).subscribe((perfilmoba)=>{
         console.log(perfilmoba);
-        // this.router.navigate(["perfilMoba/listar"]);
+        this.router.navigate(["perfilMoba/listar"]);
       });
 
       

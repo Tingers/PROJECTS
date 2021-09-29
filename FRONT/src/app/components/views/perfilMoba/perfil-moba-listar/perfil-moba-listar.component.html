@@ -1,27 +1,36 @@
-<table mat-table [dataSource]="perfils" class="mat-elevation-z8">
+<table mat-table [dataSource]="perfils"  class="mat-elevation-z8">
 
-    <!-- <ng-container matColumnDef="eloLOL">
-      <th mat-header-cell *matHeaderCellDef> Elo do LOL </th>
-      <td mat-cell *matCellDef="let perfil"> {{perfil.eloLOL}} </td>
-    </ng-container>
+        <ng-container matColumnDef="idJogo">
+          <th mat-header-cell *matHeaderCellDef> Id do Jogo </th>
+          <td mat-cell *matCellDef="let perfil"> {{perfil.idJogo}} </td>
+        </ng-container>
+
+      <ng-container matColumnDef="eloLOL">
+        <th mat-header-cell *matHeaderCellDef> Elo do LOL </th>
+        <td mat-cell *matCellDef="let perfil"> {{perfil.eloLOL}} </td>
+      </ng-container>
   
-       <ng-container matColumnDef="Champ">
+      <ng-container matColumnDef="Champ">
         <th mat-header-cell *matHeaderCellDef> Campeão </th>
-        <td mat-cell *matCellDef="let perfil"> {{perfil.Champ}} </td>
+        <td mat-cell *matCellDef="let perfil"> {{perfil.champ}} </td>
       </ng-container>
   
-       <ng-container matColumnDef="LaneMain">
+      <ng-container matColumnDef="LaneMain">
         <th mat-header-cell *matHeaderCellDef> Lane Primaria </th>
-        <td mat-cell *matCellDef="let perfil"> {{perfil.LaneMain}} </td>
+        <td mat-cell *matCellDef="let perfil"> {{perfil.laneMain}} </td>
       </ng-container>
 
-        <ng-container matColumnDef="LaneSecundaria">
+      <ng-container matColumnDef="LaneSecundaria">
         <th mat-header-cell *matHeaderCellDef> Lane Secundaria </th>
-        <td mat-cell *matCellDef="let perfil"> {{perfil.LaneSecundaria}} </td>
+        <td mat-cell *matCellDef="let perfil"> {{perfil.laneSecundaria}} </td>
       </ng-container>
-   -->
+
+      
+
+  
+  
 
   
     <tr mat-header-row *matHeaderRowDef="colunasPerfil"></tr>
     <tr mat-row *matRowDef="let row; columns: colunasPerfil;"></tr>
-  </table>
+</table>

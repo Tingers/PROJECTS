@@ -28,7 +28,7 @@ namespace API.Controllers
         public PerfilMoba create(PerfilMoba perfilMoba)
         {
             _context.perfils.Add(perfilMoba);
-            _context.SaveChanges();
+             _context.SaveChanges();
             return perfilMoba;
         }
 
