@@ -1,15 +1,3 @@
-<!-- <a routerLink="/jogo/cadastrar">Novo Jogo</a>
-
-<ol>
-    <li *ngFor="let jogo of jogos">
-        {{ jogo.nome }}
-        <!-- <a routerLink="/jogo/cadastrar/{{ jogo.id }}">Editar</a>
-        <a [routerLink]="['/jogo/cadastrar/', jogo.id]">Editar</a> 
-    </li>
-</ol> -->
-
-
-
 <table mat-table [dataSource]="jogos" class="mat-elevation-z8">
 
     <ng-container matColumnDef="id">
@@ -35,7 +23,7 @@
       <ng-container matColumnDef="editar">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let jogo">
-          <button mat-raised-button color="accent" routerLink="../../jogo/editar">Editar</button>
+          <button mat-raised-button color="accent" routerLink="../../jogo/editar/{{jogo.id}}">Editar</button>
   
         </td>
       </ng-container>

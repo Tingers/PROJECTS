@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PerfilMobaService } from "src/app/services/perfil-moba.service";
+import { PerfilMoba} from "src/app/models/perfilMoba";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-moba-listar',
@@ -7,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilMobaListarComponent implements OnInit {
 
-  constructor() { }
+  // colunasPerfil: string[] = ['eloLOL', 'ChampFav', 'LaneMain', 'LaneSec'];
+  // jogosTable = new MatTableDataSource<Jogo>();
+  // jogos: Jogo[] = [];
+
+  // id!: number;
+  // jogo!: Jogo;
+
+  constructor(private service: PerfilMobaService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }

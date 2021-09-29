@@ -9,6 +9,7 @@ import { Usuario} from "src/app/models/usuario";
   styleUrls: ['./usuario-cadastrar.component.css']
 })
 export class UsuarioCadastrarComponent implements OnInit {
+  Id!: number;
   nome!: string;
   idade!: number;
   pais!: string;
@@ -23,21 +24,15 @@ export class UsuarioCadastrarComponent implements OnInit {
 
   cadastrar(): void{
     let usuario: Usuario={
+        Id: this.Id,
         nome: this.nome,
         idade: this.idade,
         pais: this.pais
     };
     this.service.create(usuario).subscribe((usuario)=>{
       console.log(usuario);
-      this.router.navigate(["usuario/listar"]);
+      this.router.navigate(["perfilMoba/cadastrar/" + this.Id +""]);
     });
   }
 
-    editar(): void{
-      let usuario: Usuario= {
-        nome: this.nome,
-        idade: this.idade,
-        pais: this.pais,
-      }
-    }
 }

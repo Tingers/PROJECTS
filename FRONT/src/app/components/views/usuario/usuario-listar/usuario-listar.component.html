@@ -1,47 +1,40 @@
- <!-- <a routerLink="/jogo/cadastrar">Novo Jogo</a>
+<table mat-table [dataSource]="usuarios" class="mat-elevation-z8">
 
-<ol>
-    <li *ngFor="let jogo of jogos">
-        {{ jogo.nome }} 
-        <!-- <a routerLink="/jogo/cadastrar/{{ jogo.id }}">Editar</a>
-        <a [routerLink]="['/jogo/cadastrar/', jogo.id]">Editar</a>  -->
-    
+  <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id do usuario </th>
+      <td mat-cell *matCellDef="let usuario"> {{usuario.id}} </td>
+  </ng-container>
 
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef> Nome do Usuario </th>
+    <td mat-cell *matCellDef="let usuario"> {{usuario.nome}} </td>
+  </ng-container>
 
-
-<!-- <table mat-table [dataSource]="usuarios" class="mat-elevation-z8">
-
-    <ng-container matColumnDef="nome">
-      <th mat-header-cell *matHeaderCellDef> Nickname</th>
-      <td mat-cell *matCellDef="let usuario"> {{usuario.nome}} </td>
+     <ng-container matColumnDef="idade">
+      <th mat-header-cell *matHeaderCellDef> Idade do usuario </th>
+      <td mat-cell *matCellDef="let usuario"> {{usuario.idade}} </td>
     </ng-container>
-  
-       <ng-container matColumnDef="idade">
-        <th mat-header-cell *matHeaderCellDef> Idade </th>
-        <td mat-cell *matCellDef="let usuario"> {{usuario.idade}} </td>
-      </ng-container>
-  
-       <ng-container matColumnDef="pais">
-        <th mat-header-cell *matHeaderCellDef> País </th>
-        <td mat-cell *matCellDef="let usuario"> {{usuario.pais}} </td>
-      </ng-container>
-  
-      <ng-container matColumnDef="editar">
-        <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let usuario">
-          <button mat-raised-button color="accent" routerLink="../../usuario/editar">Editar</button>
-  
-        </td>
-      </ng-container>
-  
-      <ng-container matColumnDef="deletar">
-        <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let usuario" >
-  
-          <button mat-raised-button color="warn" routerLink="../../usuario/deletar">Deletar</button>
-        </td>
-      </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="colunasUsuarios"></tr>
-    <tr mat-row *matRowDef="let row; columns: colunasUsuarios;"></tr>
-  </table> -->
+
+     <ng-container matColumnDef="pais">
+      <th mat-header-cell *matHeaderCellDef> País do usuario </th>
+      <td mat-cell *matCellDef="let usuario"> {{usuario.pais}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="editar">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let usuario">
+        <button mat-raised-button color="accent" routerLink="../../usuario/editar/{{usuario.id}}">Editar</button>
+
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="deletar">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let usuario" >
+        <button mat-raised-button color="warn" routerLink="../../usuario/deletar/{{usuario.id}}">Deletar</button>
+      </td>
+    </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="colunasUsuarios"></tr>
+  <tr mat-row *matRowDef="let row; columns: colunasUsuarios;"></tr>
+</table>

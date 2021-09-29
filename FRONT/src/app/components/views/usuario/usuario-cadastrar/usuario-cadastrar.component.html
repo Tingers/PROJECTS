@@ -13,8 +13,8 @@
                   <input matInput placeholder="Nome Usuario" type="text" name="nome" [(ngModel)]="nome" />
                 </mat-form-field>
                 <mat-form-field>
-                  <mat-label for="idade">Idade do Usuareio</mat-label>
-                  <input matInput placeholder="Idade" type="text" name="idade" [(ngModel)]="idade" />
+                  <mat-label for="idade">Idade do Usuario</mat-label>
+                  <input matInput placeholder="Idade" type="number" name="idade" [(ngModel)]="idade" />
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label for="pais">País do Usuario</mat-label>
@@ -28,7 +28,7 @@
   
         <mat-card-actions>
             <button mat-raised-button color="warn" (click)="cadastrar()">Cadastrar</button>
-            <!-- <a mat-stroked-button routerLink="../../listar/aluguel"> Listar ALuguel </a> -->
+            <a mat-stroked-button routerLink="../../usuario/listar"> Listar Jogo </a>
         </mat-card-actions>
         
     </mat-card-content>

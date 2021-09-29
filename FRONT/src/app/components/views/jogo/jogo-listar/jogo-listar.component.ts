@@ -27,11 +27,4 @@ export class JogoListarComponent implements OnInit {
     });
   }
 
-  deletarJogo(): void{
-    console.log(this.id);
-    this.service.deleteById(this.id).subscribe((jogo) =>{
-      this.jogo = jogo;
-    })
-  }
-
 }

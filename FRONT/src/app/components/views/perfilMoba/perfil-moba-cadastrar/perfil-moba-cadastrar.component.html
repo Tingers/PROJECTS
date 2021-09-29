@@ -1,1 +1,50 @@
-<p>perfil-moba-cadastrar works!</p>
+<mat-card>
+    <mat-card-title> Cadastre seu perfil no jogo </mat-card-title>
+    <mat-card-content>
+  
+      <div class="jogo">
+        
+        <mat-card> 
+            
+             <mat-card-title> Adicionar perfil </mat-card-title>
+            <mat-card-content>
+              <div class="conteudo-perfilMoba">
+
+                <!-- <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Jogo</mat-label>
+                    <select class="form-control">
+                    <option *ngFor="let jogo of jogos" value= {{jogo.id}}>
+                        {{jogo.nome}}
+                        </option>
+                    </select>
+                </mat-form-field> -->
+ 
+                <mat-form-field>
+                  <mat-label for="eloLOL">Elo no LOL</mat-label>
+                  <input matInput placeholder="Ex: Platina" type="text" name="eloLOL" [(ngModel)]="eloLOL" />
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label for="champ">Campeão favorito</mat-label>
+                  <input matInput placeholder="Ex: Aatrox" type="text" name="champ" [(ngModel)]="champ" />
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label for="laneMain">Lane principal</mat-label>
+                  <input matInput placeholder="Ex: Mid" type="text" name="laneMain" [(ngModel)]="laneMain" />
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label for="laneSecundaria">Lane Secundaria</mat-label>
+                  <input matInput placeholder="Ex: Top" type="text" name="laneSecundaria" [(ngModel)]="laneSecundaria" />
+                </mat-form-field> 
+               </div>
+            </mat-card-content>
+        </mat-card>
+  
+      </div>
+  
+        <mat-card-actions> 
+             <!-- <button mat-raised-button color="warn" (click)="cadastrar()">Cadastrar</button> -->
+             <a mat-stroked-button routerLink="perfilMoba/listar"> Exibir perfil </a>
+     </mat-card-actions>
+        
+    </mat-card-content>
+</mat-card>

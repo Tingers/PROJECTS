@@ -37,7 +37,6 @@ import { PerfilMobaCadastrarComponent } from './components/views/perfilMoba/perf
 @NgModule({
   declarations: [
     AppComponent,
-    //JogoComponent,
     UsuarioCadastrarComponent,
     UsuarioListarComponent,
     UsuarioDeletarComponent,

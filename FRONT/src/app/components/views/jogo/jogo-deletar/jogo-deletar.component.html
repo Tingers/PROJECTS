@@ -5,22 +5,14 @@
       <div class="jogo">
         
         <mat-card>
-            <mat-card-title> Deseja realmente deletar</mat-card-title>
-            <mat-card-content>
-              <div class="conteudo-jogo">
-                <mat-form-field>
-                  <mat-label for="id">Id do jogo</mat-label>
-                  <input matInput placeholder="Nome Jogo" type="text" name="id" [(ngModel)]="id" />
-                </mat-form-field>
-              </div>
-            </mat-card-content>
+            <mat-card-title> Deseja realmente deletar o jogo {{jogo.nome}}</mat-card-title>
         </mat-card>
   
       </div>
   
         <mat-card-actions>
             <button mat-raised-button color="warn" (click)="deletarJogo()">Deletar</button>
-            <!-- <a mat-stroked-button routerLink="jogo/listar"> Listar Jogo </a> -->
+            <a mat-stroked-button routerLink="jogo/listar"> Cancelar </a>
         </mat-card-actions>
         
     </mat-card-content>

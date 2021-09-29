@@ -25,7 +25,7 @@ const routes: Routes = [
       component: UsuarioListarComponent,
     },
     {
-        path: "usuario/editar",
+        path: "usuario/editar/:id",
         component: UsuarioEditarComponent,
     },
     {
@@ -33,7 +33,7 @@ const routes: Routes = [
         component: UsuarioCadastrarComponent,
     },
     {
-      path: "usuario/deletar",
+      path: "usuario/deletar/:id",
       component: UsuarioDeletarComponent,
     },
 
@@ -43,7 +43,7 @@ const routes: Routes = [
       component: JogoListarComponent,
     },
     {
-        path: "jogo/editar",
+        path: "jogo/editar/:id",
         component: JogoEditarComponent,
     },
     {

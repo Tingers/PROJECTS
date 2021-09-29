@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Jogo } from 'src/app/models/jogo';
 import { JogoService } from 'src/app/services/jogo.service';
@@ -16,9 +16,8 @@ export class JogoDeletarComponent implements OnInit {
 
   private routeSub: Subscription = new Subscription();
 
-  constructor(private service: JogoService, private route: ActivatedRoute) { }
+  constructor(private service: JogoService, private route: ActivatedRoute, private router: Router) { }
 
-  // constructor() { }
 
   ngOnInit(): void {
    console.log(this.id);
@@ -34,6 +33,7 @@ export class JogoDeletarComponent implements OnInit {
     console.log(this.id);
     this.service.deleteById(this.id).subscribe((jogo) =>{
       this.jogo = jogo;
+      this.router.navigate(["jogo/listar"]);
     })
   }
 }

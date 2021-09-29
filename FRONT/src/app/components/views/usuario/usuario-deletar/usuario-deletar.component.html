@@ -1,1 +1,19 @@
-<p>usuario-deletar works!</p>
+<mat-card>
+    <mat-card-title> Deletar usuario </mat-card-title>
+    <mat-card-content>
+  
+      <div class="usuario">
+        
+        <mat-card>
+            <mat-card-title> Deseja realmente deletar o usuario {{usuario.nome}}</mat-card-title>
+        </mat-card>
+  
+      </div>
+  
+        <mat-card-actions>
+            <button mat-raised-button color="warn" (click)="deletarUsuario()">Deletar</button>
+            <a mat-stroked-button routerLink="usuario/listar"> Cancelar </a>
+        </mat-card-actions>
+        
+    </mat-card-content>
+</mat-card>

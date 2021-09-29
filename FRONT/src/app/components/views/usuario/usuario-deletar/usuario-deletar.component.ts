@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
@@ -17,20 +17,24 @@ export class UsuarioDeletarComponent implements OnInit {
 
   private routeSub: Subscription = new Subscription();
 
-  constructor(private service: UsuarioService, private route: ActivatedRoute) { }
+  constructor(private service: UsuarioService, private route: ActivatedRoute, private router: Router) { }
+
 
   ngOnInit(): void {
-    this.routeSub = this.route.params.subscribe(params =>{
-      this.Id = params['id'];
-    });
-    this.service. getById(this.Id).subscribe((usuario) =>{
-      this.usuario = usuario;
+    console.log(this.Id);
+      this.routeSub = this.route.params.subscribe(params =>{
+        this.Id = params['id'];
+      });
+    this.service.getById(this.Id).subscribe((usuario) =>{
+    this.usuario = usuario;
     });
   }
 
   deletarUsuario(): void{
+    console.log(this.Id);
     this.service.deleteById(this.Id).subscribe((usuario) =>{
       this.usuario = usuario;
+      this.router.navigate(["usuario/listar"]);
     })
   }
 }

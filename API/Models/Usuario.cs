@@ -11,13 +11,13 @@ namespace API.Models
         //Atributos ou propriedades
         [Key]
         public int Id { get; set; }
-        public string Nickname { get; set; }
+        public string nome { get; set; }
         public int Idade { get; set; }
         public string Pais { get; set; }
         public DateTime CriadoEm { get; set; }
 
         public override string ToString() =>
-            $"Nick: {Nickname} | Idade: {Idade.ToString("C2")} | Criado em: {CriadoEm}";
+            $"Nick: {nome} | Idade: {Idade.ToString("C2")} | Criado em: {CriadoEm}";
 
     }
 }
