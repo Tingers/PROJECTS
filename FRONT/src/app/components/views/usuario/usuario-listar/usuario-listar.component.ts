@@ -22,7 +22,6 @@ export class UsuarioListarComponent implements OnInit {
   ngOnInit(): void {
     this.service.list().subscribe((usuarios) => {
       this.usuarios = usuarios;
-      console.log(usuarios)
     });
   }
 

@@ -68,12 +68,8 @@ namespace API.Controllers
          // PUT: api/jogo/editar
         [HttpPut]
         [Route("editar/{Id}")]
-        public async Task<IActionResult> UpdateAsync([FromRoute] int Id)
+        public async Task<IActionResult> UpdateAsync([FromBody] Jogo jogo)
         {
-            Jogo jogo = _context.jogos.FirstOrDefault
-            (
-                jogo => jogo.Id == Id
-            );
             _context.jogos.Update(jogo);
             await _context.SaveChangesAsync();
             return Ok();

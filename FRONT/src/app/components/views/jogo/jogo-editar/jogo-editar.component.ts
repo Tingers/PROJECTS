@@ -39,12 +39,11 @@ export class JogoEditarComponent implements OnInit {
 
   editar(): void{
     // let jogo = new Jogo();
-    this.jogo2.id = this.jogo.id;
-    this.jogo2.nome = this.nome;
-    this.jogo2.genero = this.genero;
-    this.jogo2.plataforma = this.plataforma;
-    this.service.updateById(this.Id, this.jogo2).subscribe((jogo)=> {
-      console.log(jogo);
+    this.jogo.id = this.Id;
+    this.jogo.nome = this.nome != null ? this.nome : this.jogo.nome;
+    this.jogo.genero = this.genero != null ? this.genero : this.jogo.genero;
+    this.jogo.plataforma = this.plataforma != null ? this.plataforma : this.jogo.plataforma;
+    this.service.updateById(this.Id, this.jogo).subscribe((jogo)=> {
       this.snack.open("Jogo editado", "Jogos", {
         duration: 3000,
         horizontalPosition: "center",

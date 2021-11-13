@@ -24,11 +24,11 @@ export class UsuarioService{
     }
 
     updateById(Id: number, usuario: Usuario): Observable<Usuario>{
-        return this.http.put<Usuario>(`${this.baseURL}/updatebyid/${Id}`, usuario);
+        return this.http.put<Usuario>(`${this.baseURL}/editar/${Id}`, usuario);
     }
 
     deleteById(Id: number): Observable<Usuario>{
-        return this.http.delete<Usuario>(`${this.baseURL}/deletar`);
+        return this.http.delete<Usuario>(`${this.baseURL}/deletar/${Id}`);
     }
 
 }

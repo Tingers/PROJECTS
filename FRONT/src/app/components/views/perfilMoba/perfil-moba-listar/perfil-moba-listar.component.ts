@@ -29,10 +29,6 @@ export class PerfilMobaListarComponent implements OnInit {
      console.log(perfils)
     });
 
-    // this.jogoService.list().subscribe((jogos) => {
-    //   this.jogos = jogos;
-    //   console.log(jogos)
-    // });
   }
 
 }
