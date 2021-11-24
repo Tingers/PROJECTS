@@ -42,9 +42,10 @@ export class PerfilMobaCadastrarComponent implements OnInit {
 
     cadastrar(): void{
 
-    
+      this.IdUsuario = 1;
+
       let perfilmoba: PerfilMoba ={
-          // idUsuario: this.IdUsuario,
+          idUsuario: this.IdUsuario,
           idJogo: this.idJogo,
           eloLOL: this.eloLOL,
           Champ: this.Champ,

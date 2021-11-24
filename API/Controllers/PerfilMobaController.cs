@@ -27,6 +27,8 @@ namespace API.Controllers
         [Route("criar")]
         public PerfilMoba create(PerfilMoba perfilMoba)
         {
+            perfilMoba.usuario = _context.usuarios.Find(perfilMoba.idUsuario);
+            perfilMoba.jogo = _context.jogos.Find(perfilMoba.idJogo);
             _context.perfils.Add(perfilMoba);
              _context.SaveChanges();
             return perfilMoba;
