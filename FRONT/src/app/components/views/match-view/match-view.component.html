@@ -1,1 +1,40 @@
-<p>match-view works!</p>
+<table mat-table [dataSource]="perfils"  class="mat-elevation-z8">
+
+    <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef> Nome do Usuario </th>
+        <td mat-cell *matCellDef="let perfil"> {{perfil.usuario?.nome}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="idade">
+        <th mat-header-cell *matHeaderCellDef> Idade do usuario </th>
+        <td mat-cell *matCellDef="let perfil"> {{perfil.usuario?.idade}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pais">
+        <th mat-header-cell *matHeaderCellDef> País do usuario </th>
+        <td mat-cell *matCellDef="let perfil"> {{perfil.usuario?.pais}} </td>
+    </ng-container> 
+
+    <ng-container matColumnDef="eloLOL">
+      <th mat-header-cell *matHeaderCellDef> Elo do LOL </th>
+      <td mat-cell *matCellDef="let perfil"> {{perfil.eloLOL}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Champ">
+      <th mat-header-cell *matHeaderCellDef> Campeão </th>
+      <td mat-cell *matCellDef="let perfil"> {{perfil.champ}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="LaneMain">
+      <th mat-header-cell *matHeaderCellDef> Lane Primaria </th>
+      <td mat-cell *matCellDef="let perfil"> {{perfil.laneMain}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="LaneSecundaria">
+      <th mat-header-cell *matHeaderCellDef> Lane Secundaria </th>
+      <td mat-cell *matCellDef="let perfil"> {{perfil.laneSecundaria}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="colunasPerfil"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunasPerfil;"></tr>
+</table>

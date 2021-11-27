@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PerfilMoba } from 'src/app/models/perfilMoba';
 import { Usuario } from 'src/app/models/usuario';
 import { MatchService } from 'src/app/services/match.service';
-import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-match-view',
@@ -14,8 +14,13 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class MatchViewComponent implements OnInit {
 
+  colunasPerfil: string[] = ['nome', 'idade', 'pais', 'eloLOL', 'Champ', 'LaneMain', 'LaneSecundaria'];
+  perfilsTable = new MatTableDataSource<PerfilMoba>();
+
   elo!: string;
-  PerfilMoba: PerfilMoba[] = [];
+  perfils: PerfilMoba[] = [];
+  usuarios: Usuario[] = [];
+  perfil!: PerfilMoba;
 
   constructor(
     private service: MatchService,
@@ -24,17 +29,14 @@ export class MatchViewComponent implements OnInit {
     private snack: MatSnackBar
   ) { }
 
-  
   private routeSub: Subscription = new Subscription();
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
       this.elo = params['elo'];
     });
-    this.service.getAll(this.elo).subscribe((perfilMoba: PerfilMoba[])=>{
-      this.PerfilMoba = perfilMoba;
-      console.log(this.PerfilMoba)
+    this.service.getAll(this.elo).subscribe((perfils)=>{
+      this.perfils = perfils;
     });
   }
-
 }

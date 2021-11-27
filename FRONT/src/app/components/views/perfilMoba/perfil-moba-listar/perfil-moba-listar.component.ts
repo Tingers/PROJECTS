@@ -23,7 +23,11 @@ export class PerfilMobaListarComponent implements OnInit {
   id!: number;
   perfil!: PerfilMoba;
 
-  constructor(private service: PerfilMobaService, private route: ActivatedRoute, private jogoService: JogoService) { }
+  constructor(
+    private service: PerfilMobaService, 
+    private route: ActivatedRoute, 
+    private jogoService: JogoService
+  ) { }
 
   ngOnInit(): void {
      this.service.list().subscribe((perfils) => {
