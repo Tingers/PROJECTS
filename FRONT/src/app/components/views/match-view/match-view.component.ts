@@ -38,5 +38,6 @@ export class MatchViewComponent implements OnInit {
     this.service.getAll(this.elo).subscribe((perfils)=>{
       this.perfils = perfils;
     });
+
   }
 }

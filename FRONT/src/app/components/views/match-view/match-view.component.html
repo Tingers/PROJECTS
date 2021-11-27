@@ -1,3 +1,7 @@
+<mat-card>
+  <mat-card-title> Jogadores de League of Legends do mesmo elo prontos para jogar </mat-card-title>
+  <mat-card-content>
+
 <table mat-table [dataSource]="perfils"  class="mat-elevation-z8">
 
     <ng-container matColumnDef="nome">
@@ -38,3 +42,7 @@
     <tr mat-header-row *matHeaderRowDef="colunasPerfil"></tr>
     <tr mat-row *matRowDef="let row; columns: colunasPerfil;"></tr>
 </table>
+
+
+</mat-card-content>
+</mat-card>
