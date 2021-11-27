@@ -16,11 +16,33 @@
                         <option *ngFor="let jogo of jogos" [ngValue]="jogo.id">{{jogo.nome}}  </option>
                     </select>
                 </mat-form-field>
+
+                <mat-form-field class="full-width" appearance="fill">
+                  <mat-label>Usuario</mat-label>
+                  <select matNativeControl class="form-control" [(ngModel)]="idUsuario">
+                      <option *ngFor="let usuario of usuarios" [ngValue]="usuario.id">{{usuario.nome}}  </option>
+                  </select>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" appearance="fill">
+                  <mat-label>Elo no LOL</mat-label>
+                  <select matNativeControl class="form-control" [(ngModel)]="eloLOL">
+                      <option value="ferro"> Ferro </option>
+                      <option value="bronze"> Bronze </option>
+                      <option value="prata"> Prata </option>
+                      <option value="ouro"> Ouro </option>
+                      <option value="platina"> Platina </option>
+                      <option value="diamante"> Diamante </option>
+                      <option value="mestre"> Mestre </option>
+                      <option value="grao_mestre"> Grão-Mestre </option>
+                      <option value="desafiante"> Desafiante </option>
+                  </select>
+                </mat-form-field>
  
-                <mat-form-field>
+                <!-- <mat-form-field>
                   <mat-label for="eloLOL">Elo no LOL</mat-label>
                   <input matInput placeholder="Ex: Platina" type="text" name="eloLOL" [(ngModel)]="eloLOL" />
-                </mat-form-field>
+                </mat-form-field> -->
                 <mat-form-field>
                   <mat-label for="champ">Campeão favorito</mat-label>
                   <input matInput placeholder="Ex: Aatrox" type="text" name="champ" [(ngModel)]="Champ" />

@@ -13,7 +13,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class UsuarioEditarComponent implements OnInit {
 
   usuario!: Usuario;
-  Id!: number;
+  id!: number;
   nome!: string;
   idade!: number;
   pais!: string;
@@ -30,20 +30,20 @@ export class UsuarioEditarComponent implements OnInit {
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
-      this.Id = params['id'];
+      this.id = params['id'];
     });
-    this.service.getById(this.Id).subscribe((usuario)=>{
+    this.service.getById(this.id).subscribe((usuario)=>{
       this.usuario=usuario;
     })
   }
 
   editar(): void{
     // let jogo = new Jogo();
-    this.usuario.Id = this.Id;
+    this.usuario.id = this.id;
     this.usuario.nome = this.nome != null ? this.nome : this.usuario.nome;
     this.usuario.idade = this.idade != null ? this.idade : this.usuario.idade;
     this.usuario.pais = this.pais != null ? this.pais : this.usuario.pais;
-    this.service.updateById(this.Id, this.usuario).subscribe((usuario)=> {
+    this.service.updateById(this.id, this.usuario).subscribe((usuario)=> {
       this.snack.open("Usuario editado", "Usuarios", {
         duration: 3000,
         horizontalPosition: "center",

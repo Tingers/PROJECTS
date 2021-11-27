@@ -28,5 +28,6 @@ namespace API.Models
         public override string ToString() =>
             $"Id: {Id} | eloLOL: {eloLOL} | champ: {champ} | LaneMain: {laneMain} | LaneSecundaria: {laneSecundaria} | Criado em: {CriadoEm}";
 
+
     }
 }

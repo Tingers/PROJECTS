@@ -1,7 +1,7 @@
 import { Jogo } from "./jogo";
 
 export interface PerfilMoba {
-    Id?: number;
+    id?: number;
     idUsuario: number;
     idJogo: number;
     eloLOL: string;

@@ -14,7 +14,7 @@ Content-Type: application/json
 GET https://localhost:5001/api/perfilMoba/listar
 
 ###
-GET https://localhost:5001/api/perfilMoba/listarId/1
+GET https://localhost:5001/api/perfilMoba/listarId/6
 
 ###
 DELETE https://localhost:5001/api/perfilMoba/deletar/1

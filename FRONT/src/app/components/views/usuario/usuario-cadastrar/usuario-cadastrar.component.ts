@@ -29,13 +29,9 @@ export class UsuarioCadastrarComponent implements OnInit {
         idade: this.idade,
         pais: this.pais
     };
+    
     this.service.create(usuario).subscribe((usuario)=>{
-      console.log(usuario)
-
-      
-        this.GoldData=usuario.Id
-        console.log(this.GoldData)
-      
+      this.GoldData=usuario.id
       this.router.navigate(["usuario/listar"]);
     });
   }

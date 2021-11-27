@@ -1,9 +1,14 @@
 <table mat-table [dataSource]="perfils"  class="mat-elevation-z8">
 
-        <ng-container matColumnDef="idJogo">
-          <th mat-header-cell *matHeaderCellDef> Id do Jogo </th>
-          <td mat-cell *matCellDef="let perfil"> {{perfil.idJogo}} </td>
-        </ng-container>
+      <ng-container matColumnDef="idJogo">
+        <th mat-header-cell *matHeaderCellDef> Id do Jogo </th>
+        <td mat-cell *matCellDef="let perfil"> {{perfil.idJogo}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="idUsuario">
+        <th mat-header-cell *matHeaderCellDef> Id do Usuario </th>
+        <td mat-cell *matCellDef="let perfil"> {{perfil.idUsuario}} </td>
+      </ng-container>
 
       <ng-container matColumnDef="eloLOL">
         <th mat-header-cell *matHeaderCellDef> Elo do LOL </th>

@@ -11,15 +11,21 @@ import { UsuarioEditarComponent } from './components/views/usuario/usuario-edita
 import { UsuarioListarComponent } from './components/views/usuario/usuario-listar/usuario-listar.component';
 import { PerfilMobaListarComponent } from './components/views/perfilMoba/perfil-moba-listar/perfil-moba-listar.component';
 import { PerfilMobaCadastrarComponent } from './components/views/perfilMoba/perfil-moba-cadastrar/perfil-moba-cadastrar.component';
-import { HeaderComponent } from './components/template/header/header.component';
+import { MatchComponent } from './components/views/match/match.component';
+import { MatchViewComponent } from './components/views/match-view/match-view.component';
 //Jogo
 
 const routes: Routes = [
-    //USUARIO
+    //match
     {
       path: "",
-      component: HeaderComponent,
+      component: MatchComponent,
     },
+    {
+      path: "match/listar/:elo",
+      component: MatchViewComponent,
+    },
+    //USUARIO
     {
       path: "usuario/listar",
       component: UsuarioListarComponent,

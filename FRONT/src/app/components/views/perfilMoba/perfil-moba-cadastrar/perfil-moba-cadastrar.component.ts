@@ -1,3 +1,5 @@
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { Usuario } from './../../../../models/usuario';
 import { Component, ElementRef, OnInit, ViewChild, NgModule } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PerfilMobaService } from "src/app/services/perfil-moba.service";
@@ -13,18 +15,26 @@ import { Subscription } from 'rxjs';
 })
 export class PerfilMobaCadastrarComponent implements OnInit {
 
+  //perfil
   Id!: number;
   eloLOL!: string;
   Champ!: string;
   LaneMain!: string;
   LaneSecundaria!: string;
   idJogo!: number; 
+  idUsuario!: number;
+
+  //jogo
   jogos: Jogo[] = [];
-  IdUsuario!: number;
+
+  //usuario
+  usuarios: Usuario[] = [];
+
 
     constructor(
       private service: PerfilMobaService,
       private jogoService: JogoService,
+      private UsuarioService: UsuarioService,
       private router: Router,
       private route: ActivatedRoute
     ) { }
@@ -32,20 +42,17 @@ export class PerfilMobaCadastrarComponent implements OnInit {
     private routeSub: Subscription = new Subscription();
 
     ngOnInit(): void {
-      this.route.params.subscribe((params)=>{
-          this.IdUsuario = params.id;
-      });
       this.jogoService.list().subscribe((jogos: Jogo[]) => {
         this.jogos = jogos;
+      });
+      this.UsuarioService.list().subscribe((usuarios: Usuario[]) => {
+        this.usuarios = usuarios;
       });
     }
 
     cadastrar(): void{
-
-      this.IdUsuario = 1;
-
       let perfilmoba: PerfilMoba ={
-          idUsuario: this.IdUsuario,
+          idUsuario: this.idUsuario,
           idJogo: this.idJogo,
           eloLOL: this.eloLOL,
           Champ: this.Champ,
@@ -54,7 +61,6 @@ export class PerfilMobaCadastrarComponent implements OnInit {
       };
 
       this.service.create(perfilmoba).subscribe((perfilmoba)=>{
-        console.log(perfilmoba);
         this.router.navigate(["perfilMoba/listar"]);
       });
 

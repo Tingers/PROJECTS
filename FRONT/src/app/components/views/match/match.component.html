@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-title> Buscar de usuários para jogar </mat-card-title>
+    <mat-card-content>
+  
+      <div class="perfilMoba">
+        
+        <mat-card> 
+            
+             <mat-card-title> Buscar usuario </mat-card-title>
+            <mat-card-content>
+              <div class="conteudo-match">
+
+                <mat-form-field class="full-width" appearance="fill">
+                  <mat-label>Usuario</mat-label>
+                  <select matNativeControl class="form-control" [(ngModel)]="idUsuario">
+                      <option *ngFor="let usuario of usuarios" [ngValue]="usuario.id">{{usuario.nome}}  </option>
+                  </select>
+                </mat-form-field>
+               </div>
+            </mat-card-content>
+        </mat-card>
+  
+    </div>
+    
+        <mat-card-actions> 
+          <button mat-raised-button color="warn" (click)="getById()">Match</button>
+        </mat-card-actions>
+
+    </mat-card-content>
+</mat-card>

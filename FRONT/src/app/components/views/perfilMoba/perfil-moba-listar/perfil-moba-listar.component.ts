@@ -1,3 +1,4 @@
+import { Usuario } from './../../../../models/usuario';
 import { Component, OnInit } from '@angular/core';
 import { PerfilMobaService } from "src/app/services/perfil-moba.service";
 import { PerfilMoba} from "src/app/models/perfilMoba";
@@ -13,10 +14,11 @@ import { JogoService } from 'src/app/services/jogo.service';
 })
 export class PerfilMobaListarComponent implements OnInit {
 
-  colunasPerfil: string[] = ['idJogo', 'eloLOL', 'Champ', 'LaneMain', 'LaneSecundaria'];
+  colunasPerfil: string[] = ['idJogo', 'idUsuario', 'eloLOL', 'Champ', 'LaneMain', 'LaneSecundaria'];
   perfilsTable = new MatTableDataSource<PerfilMoba>();
   perfils: PerfilMoba[] = [];
   jogos: Jogo[] = [];
+  usuarios: Usuario[] =[];
 
   id!: number;
   perfil!: PerfilMoba;
@@ -25,8 +27,7 @@ export class PerfilMobaListarComponent implements OnInit {
 
   ngOnInit(): void {
      this.service.list().subscribe((perfils) => {
-     this.perfils = perfils;
-     console.log(perfils)
+      this.perfils = perfils;
     });
 
   }

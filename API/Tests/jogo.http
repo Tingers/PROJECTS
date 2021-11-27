@@ -12,7 +12,7 @@ Content-Type: application/json
 GET https://localhost:5001/api/jogo/listar
 
 ###
-GET https://localhost:5001/api/jogo/listarId/1
+GET https://localhost:5001/api/jogo/listarId/2
 
 ###
 DELETE https://localhost:5001/api/jogo/deletar/1
@@ -26,3 +26,7 @@ Content-Type: application/json
     "Genero" : "FPS",
     "Plataforma" : "MOBILE"
 }
+
+
+###
+GET https://localhost:5001/api/match/getById/2
