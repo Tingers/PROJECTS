@@ -38,13 +38,13 @@ export class UsuarioEditarComponent implements OnInit {
   }
 
   editar(): void{
-    // let jogo = new Jogo();
+
     this.usuario.id = this.id;
     this.usuario.nome = this.nome != null ? this.nome : this.usuario.nome;
     this.usuario.idade = this.idade != null ? this.idade : this.usuario.idade;
     this.usuario.pais = this.pais != null ? this.pais : this.usuario.pais;
     this.service.updateById(this.id, this.usuario).subscribe((usuario)=> {
-      this.snack.open("Usuario editado", "Usuarios", {
+      this.snack.open("OK", "Usuarios", {
         duration: 3000,
         horizontalPosition: "center",
         verticalPosition: "bottom"

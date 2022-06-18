@@ -16,9 +16,10 @@ import { MatchViewComponent } from './components/views/match-view/match-view.com
 //Jogo
 
 const routes: Routes = [
+
     //match
     {
-      path: "",
+      path: "match",
       component: MatchComponent,
     },
     {

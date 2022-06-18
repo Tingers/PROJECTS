@@ -2,3 +2,6 @@ a {
     text-decoration: none;
     color: white;
 }
+.mat-elevation-z4{
+    background-color: rgb(189, 42, 42);
+}

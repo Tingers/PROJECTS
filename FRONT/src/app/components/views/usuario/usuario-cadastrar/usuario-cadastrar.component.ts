@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService } from "src/app/services/usuario.service";
 import { Usuario} from "src/app/models/usuario";
@@ -21,7 +21,10 @@ export class UsuarioCadastrarComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
+
 
   cadastrar(): void{
     let usuario: Usuario={
